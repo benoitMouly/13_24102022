@@ -10,6 +10,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons'
 
 
+/**
+ * Login who represents the login page
+ * @component react
+ * @returns {JsxElement} 
+ */
+
+
 
 const Register = () => {
     const {loading, userInfo} = useSelector((state) => state.user)

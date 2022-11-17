@@ -1,6 +1,11 @@
 import React from 'react';
 import { NavLink } from "react-router-dom";
 
+/**
+ * NotFound who represents the page if content doesnt exist 
+ * @component react
+ * @returns {JsxElement} 
+ */
 
 const NotFound = () => {
     return (

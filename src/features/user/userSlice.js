@@ -1,6 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { getUserDetails, userLogin, editNames } from './userActions'
 
+/**
+ * userSlices for our redux store
+ * @component react
+ * @returns {Functions} 
+ */
+
+
 // initialize userToken from local storage
 const userToken = localStorage.getItem('userToken') ? localStorage.getItem('userToken')
   : sessionStorage.getItem('userToken') ? sessionStorage.getItem('userToken') : null
@@ -50,7 +57,9 @@ const userSlice = createSlice({
     },
   },
   extraReducers: {
-    // Login user
+    /*
+    * USER LOGIN
+    */
     [userLogin.pending]: (state) => {
       state.loading = true
       state.error = null
@@ -72,7 +81,10 @@ const userSlice = createSlice({
       state.error = payload
     },
 
-    // get user details
+    /*
+    * GET USER DETAILS
+    */
+
     [getUserDetails.pending]: (state) => {
       state.loading = true
     },
@@ -84,7 +96,12 @@ const userSlice = createSlice({
       state.loading = false
     },
 
-    /* Modify names */ 
+
+    /*
+    * MODIFY NAMES
+    */
+
+
     [editNames.pending]: (state) => {
       state.loading = true
     },

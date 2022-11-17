@@ -10,13 +10,22 @@ import './App.css'
 import ProtectedRoute from './routing/ProtectedRoute'
 
 
-
 import Navigation from './components/Navigation';
 import './styles/pages/main.css';
 import Footer from './components/Footer';
 
-// Toutes les données qui ont besoin d'avoir accès à redux
- // Doivent etre contenu dans ce qu'on appel un " PROVIDER "
+/**
+ * @author Mouly Benoît
+ * @help https://github.com/benoitMouly/BenoitMouly_13_24102022/blob/main/README.md
+ * @repo https://github.com/benoitMouly
+ * 
+ * @reactApp App
+ * @return react app
+ */
+
+
+// Every data needs to get an access to redux
+ // Then our app needs to be enrolled by a  " PROVIDER "
 const App = () => {
   return (
     <Provider store={store}>

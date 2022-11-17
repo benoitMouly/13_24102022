@@ -2,6 +2,17 @@ import axios from 'axios'
 import { createAsyncThunk } from '@reduxjs/toolkit'
 
 
+/**
+ * userActions for our redux store
+ * @component react
+ * @returns {Functions} 
+ */
+
+
+/*
+* Make a call to the back API for getting userLogin
+*/
+
 export const userLogin = createAsyncThunk(
   'user/login',
   async ({ email, password }, { rejectWithValue }) => {
@@ -34,6 +45,10 @@ export const userLogin = createAsyncThunk(
   }
 )
 
+/*
+* Make a call to the back API for getting user details
+*/
+
 export const getUserDetails = createAsyncThunk(
   'user/getUserDetails',
   async (arg, { getState, rejectWithValue }) => {
@@ -62,6 +77,10 @@ export const getUserDetails = createAsyncThunk(
     }
   }
 )
+
+/*
+* Make a call to the back API for editing user informations
+*/
 
 export const editNames = createAsyncThunk(
   'user/modifyNames',
