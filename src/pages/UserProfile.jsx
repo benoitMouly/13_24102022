@@ -4,6 +4,12 @@ import { getUserDetails } from '../features/user/userActions'
 import { editNames } from '../features/user/userActions'
 import { toggleEdit } from '../features/user/userSlice'
 
+/**
+ * Profile of the user
+ * @component react
+ * @returns {JsxElement} 
+ */
+
 const UserProfile = () => {
 
     const { userInfo, userToken } = useSelector((state) => state.user)

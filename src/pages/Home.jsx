@@ -6,7 +6,13 @@ import iconSecurity from '../assets/img/icon-security.png';
 
 import { useSelector } from 'react-redux';
 
-const Home = (props) => {
+/**
+ * Home who represents the main page who contains every components 
+ * @component react
+ * @returns {JsxElement} 
+ */
+
+const Home = () => {
   const tasks = useSelector(state => state.users)
   console.log(tasks)
 
