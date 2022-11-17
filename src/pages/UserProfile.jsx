@@ -4,8 +4,6 @@ import { getUserDetails } from '../features/user/userActions'
 import { editNames } from '../features/user/userActions'
 import { toggleEdit } from '../features/user/userSlice'
 
-// import { useDispatch, useSelector } from 'react-redux';
-
 const UserProfile = () => {
 
     const { userInfo, userToken } = useSelector((state) => state.user)

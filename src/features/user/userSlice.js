@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit'
-// import { getUserDetails, registerUser, userLogin } from './userActions'
 import { getUserDetails, userLogin, editNames } from './userActions'
 
 // initialize userToken from local storage

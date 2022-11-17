@@ -15,7 +15,6 @@ export const userLogin = createAsyncThunk(
 
       const { data } = await axios.post(
         'http://localhost:3001/api/v1/user/login',
-        // '/api/user/login',
         { email, password },
         config,
       )
@@ -53,7 +52,6 @@ export const getUserDetails = createAsyncThunk(
       }
 
       const { data } = await axios.post(`http://localhost:3001/api/v1/user/profile`, arg, config)
-      // const { data } = await axios.post(`http://localhost:3001/api/v1/user/profile`,  config)
       return data
     } catch (error) {
       if (error.response && error.response.data.message) {
@@ -73,15 +71,12 @@ export const editNames = createAsyncThunk(
       // configure header's Content-Type as JSON
       const config = {
         headers: {
-          // 'Accept': 'application/json',
           'Authorization': `Bearer ${user.userToken}`,
           'Content-Type': 'application/json',
         },
       }
       const { data } = await axios.put(
         'http://localhost:3001/api/v1/user/profile',
-        // '/api/user/login',
-
         { firstName, lastName },
         config
       )
