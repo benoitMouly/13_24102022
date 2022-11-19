@@ -1,6 +1,5 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getUserDetails } from '../features/user/userActions'
 import { editNames } from '../features/user/userActions'
 import { toggleEdit } from '../features/user/userSlice'
 
@@ -12,18 +11,8 @@ import { toggleEdit } from '../features/user/userSlice'
 
 const UserProfile = () => {
 
-    const { userInfo, userToken } = useSelector((state) => state.user)
+    const { userInfo} = useSelector((state) => state.user)
     const dispatch = useDispatch()
-
-    useEffect(() => {
-        if (userToken) {
-          dispatch(getUserDetails())
-
-        }
-        else{
-          return
-        }
-      }, [userToken, dispatch])
 
       const [firstName, setFirstName] = useState('')
       const [lastName, setLastName] = useState('')

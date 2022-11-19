@@ -14,10 +14,9 @@ import { createAsyncThunk } from '@reduxjs/toolkit'
 */
 
 export const userLogin = createAsyncThunk(
-  'user/login',
-  async ({ email, password }, { rejectWithValue }) => {
+  /* type */ 'user/login', 
+  /*payload */ async ({ email, password }, { rejectWithValue }) => {
     try {
-      // configure header's Content-Type as JSON
       const config = {
         headers: {
           'Content-Type': 'application/json',
@@ -30,8 +29,6 @@ export const userLogin = createAsyncThunk(
         config,
       )
 
-        // console.log(data)
-        
       return data
       
     } catch (error) {
@@ -55,12 +52,11 @@ export const getUserDetails = createAsyncThunk(
     try {
       // get user data from store
       const { user } = getState()
-      console.log('USER => ')
-      console.log(user)
+      // console.log('USER => ')
+      // console.log(user)
       // configure authorization header with user's token
       const config = {
         headers: {
-          // 'Accept': 'application/json',
           'Authorization': `Bearer ${user.userToken}`,
           'Content-Type': 'application/json',
         },

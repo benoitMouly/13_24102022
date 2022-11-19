@@ -1,0 +1,163 @@
+swagger: '2.0'
+info:
+  title: Bank Argent API documentation
+  description: Contains all available API endpoints in this codebase
+  version: '1.0.0'
+  termsOfService: https://smartbear.com/terms-of-use/
+host: localhost:3001
+basePath: /api/v1
+schemes:
+  - http
+paths:
+  /transactions:
+    get:
+      security:
+        - Bearer: []
+      tags:
+        - User Transactions
+      summary: All Transactions retrieved
+      description: Every transactions by months
+      produces:
+        - application/json
+      parameters:
+        - in: header
+          type: string
+          name: Authorization
+          description: Bearer token
+          required: true
+      responses:
+        '200':
+          description: Transactions retrieved successfully
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Transaction'
+        '400':
+          description: Invalid Fields
+        '500':
+          description: Internal Server Error
+  /transactions/{transactionID}:
+    get:
+      security:
+        - Bearer: []
+      tags:
+        - User Transactions
+      summary: Transaction details retrieved
+      description: Show transaction details
+      produces:
+        - application/json
+      parameters:
+        - name: transactionID
+          in: path
+          description: ID of transaction to return
+          required: true
+          type: integer
+        - in: header
+          type: string
+          name: Authorization
+          description: Beaer token
+          required: true
+      responses:
+        '200':
+          description: Transactions retrieved successfully
+          schema:
+            $ref: '#/definitions/transactionID'
+        '400':
+          description: Invalid Fields
+        '500':
+          description: Internal Server Error
+    put:
+      security:
+        - Bearer: []
+      tags:
+        - User Transactions
+      summary: Edit Transaction detail
+      description: Modifying transaction details
+      produces:
+        - application/json
+      parameters:
+        - name: transactionID
+          in: path
+          description: ID of the transaction
+          required: true
+          type: integer
+        - in: header
+          type: string
+          name: Authorization
+          description: Bearer token
+          required: true
+        - in: body
+          name: body
+          description: Update attributes from transaction
+          required: true
+          schema:
+            $ref: '#/definitions/modifyTransaction'
+      responses:
+        '200':
+          description: Transactions updated successfully
+          schema:
+              $ref: '#/definitions/modifyTransactionResponse'
+        '400':
+          description: Invalid Fields
+        '500':
+          description: Internal Server Error
+securityDefinitions:
+  Bearer:
+    type: apiKey
+    name: Authorization
+    in: header
+definitions:
+  Transaction:
+    type: object
+    properties:
+      id:
+        type: integer
+        description : id of transaction
+      date:
+        type: string
+        description: Date of transaction
+      details:
+        type: string
+        description: Transaction of description
+      amount:
+        type: number
+        description: Amount transaction
+      balance:
+        type: number
+        description: Balance account
+      type:
+        type: string
+        description: Type of transaction
+      category:
+        type: string
+        description: Category of transaction
+      notes:
+        type: string
+        description: notes from user attributed field
+  transactionID:
+    type: object
+    properties:
+      id:
+        type: integer
+        description : id of transaction
+  modifyTransaction:
+    type: object
+    properties:
+      id:
+        type: integer
+        description : id of transaction
+      category:
+        type: string
+        description: Category of transaction
+      notes:
+        type: string
+        description: notes from user attributed field
+  modifyTransactionResponse:
+    type: object
+    properties:
+      transactionID:
+        type: integer
+      type:
+        type: string
+      message:
+        type: string

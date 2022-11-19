@@ -57,6 +57,7 @@ const userSlice = createSlice({
     },
   },
   extraReducers: {
+
     /*
     * USER LOGIN
     */
@@ -64,6 +65,7 @@ const userSlice = createSlice({
       state.loading = true
       state.error = null
     },
+    
     [userLogin.fulfilled]: (state, { payload }) => {
       state.loading = false
       state.userInfo = payload

@@ -4,7 +4,7 @@ import iconChat from '../assets/img/icon-chat.png';
 import iconMoney from '../assets/img/icon-money.png';
 import iconSecurity from '../assets/img/icon-security.png';
 
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 
 /**
  * Home who represents the main page who contains every components 
@@ -13,8 +13,6 @@ import { useSelector } from 'react-redux';
  */
 
 const Home = () => {
-  const tasks = useSelector(state => state.users)
-  console.log(tasks)
 
     return (
         <>
