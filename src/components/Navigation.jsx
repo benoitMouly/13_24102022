@@ -19,6 +19,10 @@ const Navigation = () => {
   useEffect(() => {
     if (userToken) {
       dispatch(getUserDetails())
+
+    }
+    else{
+      return
     }
   }, [userToken, dispatch])
 

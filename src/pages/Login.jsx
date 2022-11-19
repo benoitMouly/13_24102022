@@ -20,7 +20,6 @@ import { faUserCircle } from '@fortawesome/free-solid-svg-icons'
 
 const Register = () => {
     const {loading, userInfo} = useSelector((state) => state.user)
-    console.log(userInfo);
     const dispatch = useDispatch()
 
     // Our state is empty, we will register it later and then send it as object to our main function : submitForm
