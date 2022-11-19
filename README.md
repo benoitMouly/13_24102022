@@ -1,3 +1,4 @@
+!! Swagger mis à jour suite à la soutenance et posté dans le repo sous le nom swagger.yaml !! 
 # Synopsis de projet 
 Vous venez de commencer à travailler chez Remede Agency, une agence spécialisée dans le développement d'applications web. L'équipe est principalement composée de développeurs back-end et vient de commencer à recruter d'autres spécialistes front-end. 
 
